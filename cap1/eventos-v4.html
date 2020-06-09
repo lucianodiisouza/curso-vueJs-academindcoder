@@ -10,7 +10,10 @@
     <div id="app">
       <p>{{ contador }}</p>
       <button v-on:click="somar(5)">+1</button>
-      <p v-on:mousemove="atualizarXY">Mouse: {{x}} e {{y}}</p>
+      <p v-on:mousemove="atualizarXY">Mouse: {{x}} e {{y}}
+        <span v-on:mousemove.stop="">PARAR AQUI</span>
+
+      </p>
     </div>
 
     <script>
@@ -23,7 +26,7 @@
         },
         methods: {
           somar(passo) {
-            this.contador =+ passo;
+            this.contador = contador + passo;
           },
           atualizarXY(e) {
             this.x = e.clientX;
